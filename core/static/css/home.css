@@ -1,0 +1,214 @@
+@font-face {
+  font-family: "Tommy";
+  src: url(../fonts/madeTommy.otf);
+}
+
+@font-face {
+  font-family: "pSans";
+  src: url(../fonts/productSans.ttf);
+}
+
+@font-face {
+  font-family: "Wasatsh Brush";
+  src: url(../fonts/wasatsh-brush.ttf);
+}
+
+@import url(https://fonts.googleapis.com/css?family=Bebas+Neue:regular);
+
+@import url(https://fonts.googleapis.com/css2?family=DM+Sans&display=swap);
+
+p {
+  margin: 0;
+}
+
+
+.sliderImg {
+  width: 80vw !important;
+}
+
+.owl-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5ms;
+}
+
+.owl-dot span {
+  background: #4c7df0 !important;
+  opacity: 0.5;
+}
+
+.owl-dot.active span {
+  background-color: #4c7df0 !important;
+  opacity: 1;
+  width: 12px !important;
+  height: 12px !important;
+}
+
+.secondSection {
+  background-image: url("../images/second.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  height: 450px;
+}
+
+.textSection {
+  position: relative;
+}
+
+.pureText {
+  font-family: "Bebas Neue";
+  font-size: 65px;
+  font-weight: 400;
+  line-height: 65px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+.supportText {
+  font-family: "Wasatsh Brush";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 110px;
+  line-height: 118px;
+  text-align: center;
+  color: #4c7df0;
+}
+
+.tsPureText {
+  font-family: "Bebas Neue";
+  font-size: 65px;
+  font-weight: 400;
+  line-height: 65px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+.tsSupportText {
+  font-family: "Wasatsh Brush";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 110px;
+  line-height: 118px;
+  text-align: center;
+  color: #4c7df0;
+  margin-top: -40px;
+  margin-left: -20px;
+}
+
+.phoneMenuBtn {
+  font-size: x-large;
+  display: none;
+}
+
+.whyChooseUsText {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 27px;
+  color: #3a3b48;
+  padding-left: 2.5rem;
+}
+
+.helpTextThirdSection {
+  font-family: "DM Sans", sans-serif;
+  padding-left: 2.5rem;
+}
+
+.blueText {
+  color: #4c7df0;
+}
+
+.smallSlide {
+  display: none !important;
+}
+
+.prodImage {
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+  aspect-ratio: auto;
+}
+
+.bottleSize {
+  font-family: 'pSans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 27px;
+  color: #FFFFFF;
+  background-color: #4c7df0;
+  width: fit-content;
+}
+
+.bottleDescription {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 27px;
+  color: #3A3B48;
+}
+
+.viewProd{
+  width: fit-content;
+}
+
+@media screen and (max-width:768px) {
+  .bigSlide {
+    display: none !important;
+  }
+
+  .smallSlide {
+    display: block !important;
+  }
+
+  .pureText {
+    font-family: "Bebas Neue";
+    font-size: 45px;
+    font-weight: 400;
+    line-height: 15px;
+    letter-spacing: 0em;
+    text-align: center;
+    /* position: relative;
+    top: 50px; */
+  }
+
+  .supportText {
+    font-family: "Wasatsh Brush";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 88px;
+    text-align: center;
+    color: #4c7df0;
+    /* position: relative;
+    top: 50px; */
+  }
+
+  .secondSection {
+    background-position: left;
+  }
+
+  .prodImage{
+    object-fit: cover !important;
+  }
+
+  .bottleSize{
+    font-size: 16px;
+    line-height: 18px;
+    margin-top:10px;
+    margin-bottom:-10px;
+  }
+
+  .actProds{
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+
+  .bottleDescription{
+    font-size: 14px;
+    line-height: 16px;
+  }
+}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Ayzill - Blogs
+{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static '/css/blogs.css' %}" />
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+{% endblock css %}
+
+
+{% block body %}
+<main class="pt-4">
+    <div class="main pt-4 mt-4">
+        <div class="container">
+            <img src="/media/{{blog.blogThumb}}" alt="" class="img-fluid w-100 headerImg pt-3">
+            <h2 class="pageHead pt-3">{{blog.blogName}}</h2>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row p-0 mt-0">
+            {{blog.body|safe}}
+        </div>
+    </div>
+
+</main>
+{% endblock body %}

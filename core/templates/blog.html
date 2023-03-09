@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Ayzill - Blogs
+{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static '/css/blogs.css' %}" />
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+{% endblock css %}
+
+
+{% block body %}
+<main class="pt-4">
+    <div class="main pt-4 mt-4">
+        <div class="container">
+            <h2 class="pageHead pt-3">Blogs</h2>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row p-0 mt-0">
+            {% for blog in blogs %}
+                <div class="col-12 col-lg-4 col-md-6 col-sm-12 my-2">
+                    <div class="card" style="width:auto;">
+                        <img src="/media/{{blog.blogThumb}}" class="blogThumb" alt="...">
+                        <div class="card-body">
+                        <h5 class="card-title">{{blog.blogName}}</h5>
+                        <p class="card-text my-2">{{blog.blogDescription}}</p>
+                        <a href="/blogs/{{blog.id}}" class="btn btn-primary btnReadBlog w-100">Read Blog</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
+
+</main>
+{% endblock body %}

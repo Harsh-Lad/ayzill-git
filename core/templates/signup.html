@@ -1,0 +1,227 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <style>
+    .contact {
+      width: 108;
+      overflow: hidden;
+      background-color: #fff;
+    }
+
+    .contact .container1 {
+      height: 100vh;
+      min-height: 700px;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+    }
+
+    .contact .container1>div {
+
+      grid-column: 1/2;
+      grid-row: 1/2;
+    }
+
+    .left {
+      width: 100%;
+      max-width: 80rem;
+      margin: 0 auto;
+      padding: 65px 1.5rem 0;
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+
+    }
+
+    .contact-heading {
+      width: 45vw;
+    }
+
+    .contact-heading .supportText {
+      position: relative;
+      z-index: 3;
+      margin-bottom: 1.2rem;
+    }
+
+    .contact-heading * {
+      position: relative;
+      z-index: 3;
+    }
+
+    .contact-heading h2 {
+      font-weight: 600;
+      font-size: 3rem;
+      line-height: 0.7;
+      white-space: nowrap;
+      position: relative;
+      z-index: 3;
+      margin-bottom: 1.2rem;
+    }
+
+
+
+    .contact-form {
+      display: grid;
+      margin-top: 2.55rem;
+      grid-template-columns: repeat (2, 1fr);
+      column-gap: 2rem;
+      row-gap: 1rem;
+    }
+
+    .image-wrapper .bgImg {
+      position: absolute;
+      height: 130%;
+      left: 60%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .right {
+      display: grid;
+      grid-template-columns: repeat (2, 1fr);
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .image-wrapper {
+      position: relative;
+      grid-column: 2;
+    }
+
+    #wave {
+      fill: #fff;
+      height: 100%;
+    }
+
+    .wave-wrap svg {
+      position: absolute;
+      height: calc(100% + 10px);
+      top: 50%;
+      transform: translateY(-50%);
+      left: calc(100% - 2px);
+    }
+
+    .wave-wrap {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      right: 100%;
+      background-color: #fff;
+      color: black;
+    }
+
+    .dashed-wave {
+      position: absolute;
+      z-index: 3;
+      height: 130%;
+      bottom: 60%;
+      left: -28px;
+      transform: translateY(50%);
+    }
+
+    #dashed-wave {
+      fill: none;
+      stroke: #3d3d3d;
+      stroke-dasharray: 5px;
+    }
+
+    form {
+      width: 40vw;
+    }
+
+    .btn-sub{
+      background-color: #4C7DF0;
+      color: #fff;
+      font-size: larger;
+      border: 2px solid #4C7DF0;
+      transition: 0.5s all;
+    }
+
+    .btn-sub:hover{
+      color: #4C7DF0;
+      font-size: larger;
+      background-color: #fff;
+      border: 2px solid #4C7DF0;
+    }
+  </style>
+{% endblock css %}
+
+{% block body %}
+<main>
+  <section class="contact mt-4">
+    <div class="container1">
+      <div class="left" data-aos="fade-right">
+        <div class="form-wrapper">
+          <div class="contact-heading">
+            <h2>Experience Ayzill<span>.</span></h2>
+            <p class="supportText text-dark">Sign up today to receive the purest and most refreshing packaged drinking
+              water, spring water, and alkaline water delivered straight to your doorstep.</p>
+
+            <form method="post">
+              {% csrf_token %}
+              <div class="row">
+                <div class="col-6">
+                  <label for="">Firstname</label>
+                  <input type="text" name="fname" class="form-control my-2">
+                </div>
+                <div class="col-6">
+                  <label for="">Lastname</label>
+                  <input type="text" name="lname" class="form-control my-2">
+                </div>
+                <div class="col-12">
+                  <label for="">Email id</label>
+                  <input type="email" name="email" class="form-control my-2">
+                </div>
+                <div class="col-12">
+                  <label for="">Phone no.</label>
+                  <input type="tel" name="phone" class="form-control my-2">
+                </div>
+                <div class="col-12">
+                  <label for="">Password</label>
+                  <input type="password" name="password" class="form-control my-2">
+                </div>
+                <!-- <div class="col-12">
+                  <label for="">Re-enter Password</label>
+                  <input type="text" class="form-control my-2">
+                </div> -->
+              </div>
+
+              <button type="submit" class="btn btn-sub w-100">Create Account</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="right" data-aos="fade-left">
+        <div class="image-wrapper">
+          <img class="bgImg" src="{% static 'images/img.jpg' %}">
+          <div class="wave-wrap">
+            <svg viewBox="0 0 783 1536" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path id="wave"
+                d="M236.705 1356.18C200.542 1483.72 64.5004 1528.54 1 1535V1H770.538C793.858 63.1213 797.23 196.197 624.165 231.531C407.833 275.698 274.374 331.715 450.884 568.709C627.393 805.704 510.079 815.399 347.561 939.282C185.043 1063.17 281.908 1196.74 236.705 1356.18Z"
+                fill="#D9D9D9" stroke="white" />
+            </svg>
+          </div>
+          <svg class="dashed-wave" viewBox="0 0 345 877" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path id="dashed-wave"
+              d="M0.5 876C25.6667 836.167 73.2 739.8 62 673C48 589.5 35.5 499.5 125.5 462C215.5 424.5 150 365 87 333.5C24 302 44 237.5 125.5 213.5C207 189.5 307 138.5 246 87C185 35.5 297 1 344.5 1" />
+          </svg>
+
+        </div>
+
+      </div>
+  </section>
+</main>
+{% endblock body %}
+
+{% block js %}
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+{% endblock js %}
+</body>
+
+</html>

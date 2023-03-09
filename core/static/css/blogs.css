@@ -1,0 +1,82 @@
+@font-face {
+  font-family: "Tommy";
+  src: url(../fonts/madeTommy.otf);
+}
+
+@font-face {
+  font-family: "pSans";
+  src: url(../fonts/productSans.ttf);
+}
+
+@font-face {
+  font-family: "Wasatsh Brush";
+  src: url(../fonts/wasatsh-brush.ttf);
+}
+
+@import url(https://fonts.googleapis.com/css?family=Bebas+Neue:regular);
+
+@import url(https://fonts.googleapis.com/css2?family=DM+Sans&display=swap);
+
+p {
+  margin: 0;
+}
+
+body {
+  background-color: #F9F9FB;
+}
+
+.pageHead {
+  font-family: "Bebas Neue";
+  font-size: 45px;
+  font-weight: 400;
+  line-height: 65px;
+  letter-spacing: 0em;
+  color: #3D3D3D;
+}
+
+.blogThumb {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: top;
+}
+
+.card {
+  border-color: transparent;
+  border-radius: 12px;
+}
+
+.card img {
+  border-radius: 12px;
+}
+
+.card-title {
+  font-family: 'pSans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 27px;
+  color: #3D3D3D;
+}
+
+.card-text {
+  font-family: 'pSans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  color: #686F7F;
+}
+
+.btnReadBlog {
+  background: #4C7DF0;
+  border-radius: 5px;
+  color: #F9F9FB;
+}
+
+.headerImg{
+  height: 35vh !important;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 10px;
+}

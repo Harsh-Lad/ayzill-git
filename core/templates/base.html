@@ -1,0 +1,224 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1 ">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <title>{% block title %} {% endblock title %}</title>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Bebas+Neue:regular" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <script src="https://code.iconify.design/iconify-icon/1.0.3/iconify-icon.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
+  <style>
+    body {
+      overflow-x: clip;
+    }
+
+    @font-face {
+      font-family: "Tommy";
+      src: url({% static '/fonts/madeTommy.otf' %});
+    }
+
+    @font-face {
+      font-family: "pSans";
+      src: url({% static '/fonts/productSans.ttf' %});
+
+    }
+
+    @font-face {
+      font-family: "Wasatsh Brush";
+      src: url({% static '/fonts/wasatsh-brush.ttf' %});
+    }
+
+
+    @import url(https://fonts.googleapis.com/css?family=Bebas+Neue:regular);
+
+    p {
+      margin: 0;
+    }
+
+    body {
+      overflow-x: clip !important;
+      width: 100vw !important;
+    }
+
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: #4c7df09d;
+      border-radius: 10px;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #4C7DF0
+    }
+
+    .navWrapper {
+      border-bottom: 1px solid #E5E5E5;
+      position: fixed;
+      width: 100vw;
+      background-color: #ffffff;
+      top: 0;
+      z-index: 10000;
+    }
+
+    .navLinks {
+      text-decoration: none;
+      color: #000;
+      font-family: 'pSans';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 18px;
+      text-align: center;
+    }
+
+    .navLinks.active {
+      color: #4C7DF0;
+    }
+
+    .navBrand {
+      font-family: 'TOMMY';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 25px;
+      text-transform: uppercase;
+      color: #4C7DF0;
+    }
+
+    .btn-signup {
+      color: #4C7DF0;
+      border: 1px solid #4C7DF0;
+      border-radius: 10px;
+    }
+
+    .btn-signup:hover {
+      background-color: #4C7DF0;
+      color: #fff;
+    }
+
+
+    .phoneMenuBtn {
+      font-size: x-large;
+      display: none;
+    }
+
+    .phoneNav {
+      display: none;
+    }
+
+    @media only screen and (max-width: 800px) {
+      .phoneMenuBtn {
+        display: flex !important;
+        font-size: 30px !important;
+      }
+
+      .navLinksWrapper {
+        display: none;
+      }
+
+      .phoneNav {
+        display: flex;
+        position: absolute;
+        top: 1000vh;
+        width: 100vw;
+        height: 60vh;
+        left: 0;
+        z-index: 1000;
+        transition: 0.5s;
+        color: #000;
+        flex-direction: column;
+        border-radius: 20px;
+        align-items: flex-start;
+        background: rgba( 255, 255, 255, 0.7 );
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 7px );
+        -webkit-backdrop-filter: blur( 7px );
+        border-radius: 20px;
+        padding: 20px 20px;
+      }
+
+      .phoneNav a{
+        margin: 10px 0;
+        font-size: larger;
+      }
+
+      .phoneNav iconify-icon{
+        font-size: 30px;
+      }
+    }
+  </style>
+  {% block css %}{% endblock css %}
+</head>
+
+<body>
+  <div class="navWrapper d-flex py-4  justify-content-between align-items-center px-2 px-lg-4 px-md-3 px-sm-2">
+    <p class="navBrand px-2 px-lg-4 px-md-3 px-sm-2"><img src="{% static '/images/logo.png' %}" alt="" srcset=""
+        class="img-fluid"></p>
+    <div class="navLinksWrapper px-5">
+      <a href="/" class="navLinks active mx-3">Home</a>
+      <a href="/products" class="navLinks mx-3">Products</a>
+      <a href="/blogs" class="navLinks mx-3">Blogs</a>
+      <a href="/aboutUs" class="navLinks mx-3">About us</a>
+      <a href="/cart" class="navLinks mx-3">Cart</a>
+      <a href="/signup" class="navLinks btn-signup  mx-3 px-3 py-2">Signup</a>
+    </div>
+    <div class="phoneMenuBtn px-2 px-lg-4 px-md-3 px-sm-2">
+      {% comment %} <iconify-icon icon="ic:round-menu" style="color: #4c7df0;"></iconify-icon> {% endcomment %}
+      <iconify-icon icon="gg:menu-right-alt" style="color: #4c7df0;" id="menuBtn" onclick="showNav()"></iconify-icon>
+    </div>
+
+    <div class="phoneNav" id="phoneMenu">
+      <a href="/" class="navLinks active mx-3 d-flex align-items-center"><iconify-icon icon="material-symbols:home-rounded"></iconify-icon> <p class="p-0 m-1">Home</p> </a>
+      <a href="/products" class="navLinks mx-3 d-flex align-items-center"><iconify-icon icon="dashicons:products"></iconify-icon><p class="p-0 m-1">Products</p></a>
+      <a href="/blogs" class="navLinks mx-3 d-flex align-items-center"><iconify-icon icon="mdi:blog-outline"></iconify-icon><p class="p-0 m-1">Blogs</p></a>
+      <a href="/aboutUs" class="navLinks mx-3 d-flex align-items-center"><iconify-icon icon="mdi:about-circle-outline"></iconify-icon><p class="p-0 m-1">About us</p></a>
+      <a href="/cart" class="navLinks mx-3 d-flex align-items-center"><iconify-icon icon="material-symbols:shopping-cart-outline"></iconify-icon><p class="p-0 m-1">Cart</p></a>
+      <a href="/signup" class="navLinks btn-signup  mx-3 px-3 py-2">Signup</a>
+    </div>
+
+  </div>
+  {% block body %}
+  {% endblock body %}
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+
+  <script>
+    var btn = document.getElementById('menuBtn');
+    function showNav() {
+      var menu = document.getElementById('phoneMenu');
+      if (menu.style.top == '1000vh') {
+        menu.style.top = '40vh';
+      }
+      else {
+        menu.style.top = '1000vh';
+      }
+
+    }
+  </script>
+  {% block js %}{% endblock js %}
+</body>
+
+</html>
